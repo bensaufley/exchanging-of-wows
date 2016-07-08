@@ -102,33 +102,41 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: 'Midnight', script;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
   small: (
-    'h1': 24,
-    'h2': 20,
-    'h3': 19,
-    'h4': 18,
-    'h5': 17,
+    'h1': 48,
+    'h2': 40,
+    'h3': 36,
+    'h4': 30,
+    'h5': 24,
     'h6': 16,
   ),
   medium: (
-    'h1': 48,
-    'h2': 40,
-    'h3': 31,
-    'h4': 25,
-    'h5': 20,
-    'h6': 16,
+    'h1': 72,
+    'h2': 58,
+    'h3': 46,
+    'h4': 34,
+    'h5': 28,
+    'h6': 20,
   ),
+  large: (
+    'h1': 120,
+    'h2': 96,
+    'h3': 78,
+    'h4': 64,
+    'h5': 48,
+    'h6': 32,
+  )
 );
 $header-color: inherit;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-text-rendering: optimizeLegibility;
-$small-font-size: 80%;
+$small-font-size: 70%;
 $header-small-font-color: $medium-gray;
 $paragraph-lineheight: 1.6;
 $paragraph-margin-bottom: 1rem;
