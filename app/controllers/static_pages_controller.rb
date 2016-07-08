@@ -5,4 +5,7 @@ class StaticPagesController < ApplicationController
 
   def portland
   end
+
+  def jelena_ben
+  end
 end
