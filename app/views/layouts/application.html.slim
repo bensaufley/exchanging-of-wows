@@ -7,7 +7,8 @@ html.no-js
     = stylesheet_link_tag    'application', media: 'all'
   body
     = render 'shared/navigation'
-    main= yield
+    main.row
+      .column = yield
     script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr#{'.min' if Rails.env.production?}.js"
     script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery#{'.min' if Rails.env.production?}.js"
     = javascript_include_tag 'application'

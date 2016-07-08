@@ -9,6 +9,7 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
+//= require jquery_ujs
 //= require cable
 //= require static_pages
 //= require foundation.core
@@ -41,6 +42,10 @@
 // require foundation.util.triggers
 //= require_self
 //
+
+$.ajaxSetup({
+  dataType: 'json'
+});
 
 $(function() {
   $(document).foundation();

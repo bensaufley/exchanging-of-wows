@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'static_pages#home'
   get 'portland', to: 'static_pages#portland', as: :portland
 
+  namespace :admin, as: '', path: '' do
+    resources :rsvps
+  end
+  root to: 'static_pages#home'
 end

@@ -1,0 +1,12 @@
+= form_for @rsvp, data: { remote: true } do |rsvp_form|
+  .row
+    .medium-4.columns = rsvp_form.label :first_name, 'Name', class: 'middle'
+    .medium-8.columns
+      .row.collapse
+        .small-6.columns = rsvp_form.text_field :first_name, placeholder: Rsvp.human_attribute_name(:first_name)
+        .small-6.columns = rsvp_form.text_field :last_name, placeholder: Rsvp.human_attribute_name(:last_name)
+  .row
+    .medium-4.columns = rsvp_form.label :guests, class: 'middle'
+    .medium-8.columns = rsvp_form.select :guests, (1..4)
+  .row
+    .medium-8.medium-offset-4.columns = rsvp_form.button 'RSVP', type: :submit, class: 'button expanded'
