@@ -1,0 +1,11 @@
+.title-bar.hide-for-large data-responsive-toggle='responsive-menu' data-hide-for=''
+  button.menu-icon(type='button' data-toggle)
+  .title-bar-title The Exchanging of Wows
+.top-bar#responsive-menu
+  ul.vertical.menu(data-drilldown) = render 'shared/nav_menu'
+.top-bar.show-for-large
+  .top-bar-left
+    ul.menu(data-dropdown-menu)
+      li.menu-text The Exchanging of Wows
+  .top-bar-right
+    ul.dropdown.menu data-dropdown-menu='drilldown large-dropdown' = render 'shared/nav_menu'

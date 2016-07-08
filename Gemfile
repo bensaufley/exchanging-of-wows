@@ -8,6 +8,8 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'sprockets-es6'
 gem 'uglifier', '>= 1.3.0'
+gem 'foundation-rails', '~> 6.2.3'
+gem 'autoprefixer-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
