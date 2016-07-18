@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //= require jquery_ujs
+//= require jquery.ba-throttle-debounce
 //= require cable
 //= require static_pages
 //= require foundation.core
@@ -41,6 +42,7 @@
 // require foundation.util.touch
 // require foundation.util.triggers
 //= require_self
+//= require song_requests
 //
 
 $.ajaxSetup({

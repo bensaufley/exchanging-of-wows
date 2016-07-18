@@ -1,0 +1,16 @@
+h1.text-center Song Requests
+
+table
+  thead
+    tr
+      th Song
+      th IP
+      th
+
+  tbody
+    - @song_requests.each do |song_request|
+      tr
+        td
+          = render 'admin/song_requests/result', result: song_request
+        td = song_request.ip
+        td = link_to '&times;'.html_safe, song_request, data: { confirm: 'Are you sure?' }, method: :delete
