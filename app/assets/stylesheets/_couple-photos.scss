@@ -1,0 +1,47 @@
+$photo-count: 74;
+$section-count: 6;
+$page-height: $section-count * 90;
+
+@include breakpoint(medium) {
+  body {
+    // need this on a new container element - affecting the topbar too currently
+    margin-left: ((2*$page-height/$photo-count) + (2*$page-height/($photo-count*3)))/3 * 8 + vh
+  }
+}
+
+.couple-photos {
+  list-style: none;
+  display: none;
+
+  @include breakpoint(medium) {
+    display: block;
+    left: 0;
+    position: absolute;
+    top: rem-calc(57);
+    z-index: 1;
+  }
+
+  li {
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, .6));
+    float: left;
+    margin-top: -(2*$page-height/($photo-count*3)) + vh;
+
+    img {
+      border: solid #fff;
+      border-width: 1vh;
+      max-height: (2*$page-height/$photo-count) + (2*$page-height/($photo-count*3)) + vh;
+    }
+
+    &:nth-child(2n + 1) {
+      clear: left;
+    }
+
+    @for $i from 1 through $photo-count {
+      &:nth-child(#{$i}) {
+        img {
+          transform: rotate(#{random(90)-45}deg);
+        }
+      }
+    }
+  }
+}

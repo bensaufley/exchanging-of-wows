@@ -1,3 +1,6 @@
+ul.couple-photos
+  - (1..74).each do |photo_num|
+    li class="photo-#{photo_num.to_s.rjust(2, '0')}" = image_tag "couple-photos/photo - #{photo_num.to_s.rjust(2, '0')}", alt: ''
 section#top
   h1.text-center the Exchanging of Wows
 section#where-when = render 'static_pages/where_when'

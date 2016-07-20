@@ -1,5 +1,9 @@
-main section {
-  min-height: 90vh;
+main {
+  section {
+    min-height: 90vh;
+    position: relative;
+    z-index: 3;
+  }
 }
 
 h1,
@@ -21,6 +25,8 @@ h6 {
 
 .top-bar {
   font-size: 1.2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .title-bar {
