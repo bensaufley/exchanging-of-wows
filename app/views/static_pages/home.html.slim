@@ -1,10 +1,25 @@
 ul.couple-photos
   - (1..74).each do |photo_num|
-    li class="photo-#{photo_num.to_s.rjust(2, '0')}" = image_tag "couple-photos/photo - #{photo_num.to_s.rjust(2, '0')}", alt: ''
+    li class="photo-#{photo_num.to_s.rjust(2, '0')}" = image_tag "couple-photos/photo - #{photo_num.to_s.rjust(2, '0')}", alt: '', data: { pin_no_hover: true }
 section#top
-  h1.text-center the Exchanging of Wows
-section#where-when = render 'static_pages/where_when'
-section#rsvp = render 'static_pages/rsvp', rsvp: @rsvp
-section#registries = render 'static_pages/registries'
-section#contact = render 'static_pages/contact'
-section#song-requests = render 'static_pages/song_requests'
+  .row
+    .column
+      h1.text-center the Exchanging of Wows
+section#where-when
+  .row
+    .column
+      = render 'static_pages/where_when'
+section#rsvp
+  = render 'static_pages/rsvp', rsvp: @rsvp
+section#registries
+  .row
+    .column
+      = render 'static_pages/registries'
+section#contact
+  .row
+    .column
+      = render 'static_pages/contact'
+section#song-requests
+  .row
+    .column
+      = render 'static_pages/song_requests'

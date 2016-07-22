@@ -3,7 +3,8 @@ class CreateRsvps < ActiveRecord::Migration[5.0]
     create_table :rsvps do |t|
       t.string :first_name
       t.string :last_name
-      t.integer :guests
+      t.boolean :plus_one
+      t.text :notes
       t.string :ip
 
       t.timestamps

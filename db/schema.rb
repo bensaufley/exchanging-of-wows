@@ -18,7 +18,8 @@ ActiveRecord::Schema.define(version: 20160716175306) do
   create_table "rsvps", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "guests"
+    t.boolean  "plus_one"
+    t.text     "notes"
     t.string   "ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

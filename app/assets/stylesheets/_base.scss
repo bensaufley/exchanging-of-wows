@@ -1,8 +1,16 @@
 main {
+  position: relative;
+
   section {
+    background-attachment: fixed;
+    background-position: right center;
+    background-size: cover;
     min-height: 90vh;
-    position: relative;
-    z-index: 3;
+
+    > .row {
+      position: relative;
+      z-index: 3;
+    }
   }
 }
 
@@ -18,20 +26,16 @@ h6 {
   }
 }
 
-.top-bar,
-.title-bar {
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Tallow TC', $body-font-family;
-}
 
-.top-bar {
-  font-size: 1.2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.title-bar {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+  span {
+    font-family: 'Midnight', script;
+  }
 }
 
 .relative {

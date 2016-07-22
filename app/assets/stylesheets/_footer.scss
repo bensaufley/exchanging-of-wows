@@ -1,0 +1,10 @@
+.page-footer {
+  background: #333;
+  color: #fff;
+  padding: map-get($grid-column-gutter, small) / 2;
+  text-align: center;
+
+  @include breakpoint(medium) {
+    padding: map-get($grid-column-gutter, medium) / 2;
+  }
+}

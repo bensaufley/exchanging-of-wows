@@ -1,0 +1,19 @@
+.top-bar,
+.title-bar {
+  font-family: 'Tallow TC', $body-font-family;
+}
+
+.top-bar {
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 6;
+
+  .is-dropdown-submenu {
+    z-index: 6;
+  }
+}
+
+.title-bar {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}

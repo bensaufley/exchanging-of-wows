@@ -6,7 +6,13 @@
         .small-6.columns = rsvp_form.text_field :first_name, placeholder: Rsvp.human_attribute_name(:first_name)
         .small-6.columns = rsvp_form.text_field :last_name, placeholder: Rsvp.human_attribute_name(:last_name)
   .row
-    .medium-4.columns = rsvp_form.label :guests, class: 'middle'
-    .medium-8.columns = rsvp_form.select :guests, (1..4)
+    .medium-8.medium-offset-4.columns
+      = rsvp_form.check_box :plus_one
+      = rsvp_form.label :plus_one
+  .row
+    .medium-4.columns
+      = rsvp_form.label :notes, class: 'middle'
+    .medium-8.columns
+      = rsvp_form.text_area :notes, placeholder: 'Notes'
   .row
     .medium-8.medium-offset-4.columns = rsvp_form.button 'RSVP', type: :submit, class: 'button expanded'
