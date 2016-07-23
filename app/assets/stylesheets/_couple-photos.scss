@@ -1,15 +1,11 @@
-$photo-count: 74;
-$section-count: 5;
-$page-height: $section-count * 90;
-
 @include breakpoint(medium) {
   main > section {
     // need this on a new container element - affecting the topbar too currently
-    padding-left: ((2 * $page-height / $photo-count) + (2 * $page-height / ($photo-count * 3))) / 3 * 8 - ($page-height / ($photo-count * 3)) + vh;
+    padding-left: 15vw;
   }
 }
 
-.couple-photos {
+@mixin photoset($photo-count) {
   display: none;
 
   @include breakpoint(medium) {
@@ -20,9 +16,13 @@ $page-height: $section-count * 90;
     list-style: none;
     margin: 0;
     position: absolute;
-    top: rem-calc(57);
+    top: 0;
     width: 18vw;
     z-index: 1;
+  }
+
+  @include breakpoint(large) {
+    top: rem-calc(57);
   }
 
   li {
@@ -40,6 +40,7 @@ $page-height: $section-count * 90;
       display: inline-block;
       margin-top: -15%;
       max-height: 150%;
+      max-width: 1000px;
       transition: transform .5s;
     }
 
@@ -71,4 +72,12 @@ $page-height: $section-count * 90;
       }
     }
   }
+}
+
+.couple-photos {
+  @include photoset(74);
+}
+
+.portland-photos {
+  @include photoset(10);
 }
