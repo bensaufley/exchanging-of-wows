@@ -16,31 +16,40 @@ $page-height: $section-count * 90;
     background: linear-gradient(to right, $slate, transparentize($slate, 1) 70%);
     bottom: 0;
     display: block;
-    left: -($page-height / ($photo-count * 3)) + vh;
+    left: -3vw;
     list-style: none;
     margin: 0;
     position: absolute;
-    top: 0;
+    top: rem-calc(57);
+    width: 18vw;
     z-index: 1;
   }
 
   li {
     filter: drop-shadow(0 2px 4px transparentize($slate, .3));
     float: left;
-    margin-top: -(2 * $page-height / ($photo-count * 3)) + vh;
+    height: 200% / $photo-count;
     position: relative;
     transition: transform .5s;
+    width: 9vw;
 
     img {
       border: solid $white;
       border-width: 1vh;
       cursor: default;
-      max-height: (2 * $page-height / $photo-count) + (2 * $page-height / ($photo-count * 3)) + vh;
+      display: inline-block;
+      margin-top: -15%;
+      max-height: 150%;
       transition: transform .5s;
+    }
+
+    &:nth-child(2n) {
+      text-align: left;
     }
 
     &:nth-child(2n + 1) {
       clear: left;
+      text-align: right;
     }
 
     &:hover {
