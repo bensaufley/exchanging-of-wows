@@ -1,31 +1,49 @@
 #top {
   background-image: image-url('the-location.jpg');
   background-position: center;
+}
 
-  h2 {
-    color: $light-plum;
-    font-family: $script-font;
-    text-shadow: 0 0 12px $white;
+.arch {
+  letter-spacing: 3px;
+  line-height: 1.4em;
 
-    small {
-      color: $light-plum;
-      font-family: $script-font;
+  .char1,
+  .char2,
+  .char3,
+  .char16,
+  .char17 {
+    font-size: .7em;
+    line-height: 1.4 / .7 + em;
+    vertical-align: middle;
+  }
+
+  .char4,
+  .char15,
+  .char18 {
+    width: .1em;
+  }
+
+  @for $i from 1 through 24 {
+    .char#{$i} {
+      display: inline-block;
+      transform: rotate($i - 12 + deg) translateY(24 - 4 * (12 - abs($i - 12)) + px);
     }
   }
 }
 
 .roundel {
-  background-color: transparentize($white, .5);
-  border-radius: 100%;
+  background: image-url('sunburst.svg') no-repeat center, radial-gradient(circle closest-side at 50% 50%, transparentize($white, .5), transparentize($white, .5) 66%, transparentize($white, 1) 90%, transparentize($white, 1)) no-repeat center;
+  background-size: contain;
   display: inline-block;
-  margin: 0 auto 5vh;
-  padding: 3em 5em;
+  margin: -3em auto 5em;
+  padding: 9em;
   width: auto;
 
   h1 {
     color: $plum;
     font-family: $script-font;
     line-height: 1;
+    text-transform: lowercase;
 
     span,
     strong {
@@ -39,7 +57,7 @@
     }
 
     strong {
-      font-size: .7em;
+      font-size: .5em;
       font-weight: normal;
       line-height: .7;
     }

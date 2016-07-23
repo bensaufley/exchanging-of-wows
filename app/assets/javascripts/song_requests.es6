@@ -34,6 +34,24 @@
     }
   };
 
+  var navigateUp = function($results, $selected) {
+    if ($selected.length) {
+      $selected.removeClass('selected')
+        .prev().addClass('selected').end();
+    } else {
+      $results.find('li').last().addClass('selected');
+    }
+  }
+
+  var navigateDown = function($results, $selected) {
+    if ($selected.length) {
+      $selected.removeClass('selected')
+        .next().addClass('selected').end();
+    } else {
+      $results.find('li').first().addClass('selected');
+    }
+  }
+
   var navigate = function(e) {
     if ([38, 40, 13].indexOf(e.which) < 0) { return true; }
     e.preventDefault();
@@ -41,20 +59,10 @@
         $selected = $results.find('.selected');
     switch (e.which) {
       case 38: // up
-        if ($selected.length) {
-          $selected.removeClass('selected')
-            .prev().addClass('selected').end();
-        } else {
-          $results.find('li').last().addClass('selected');
-        }
+      	navigateUp($results, $selected);
         break;
       case 40: // down
-        if ($selected.length) {
-          $selected.removeClass('selected')
-            .next().addClass('selected').end();
-        } else {
-          $results.find('li').first().addClass('selected');
-        }
+        navigateDown($results, $selected);
         break;
       case 13: // enter/return
         $results.find('.selected').trigger('click');
@@ -69,10 +77,10 @@
     var data = $(this).data(),
         $form = $('#song-request-form'),
         key;
-    hideResults();
+    $form.find('input[name=search]').blur();
     for (key in data) {
       if (!data.hasOwnProperty(key)) { continue; }
-      $form.find('input[name*=' + key + ']').val(typeof data[key] == 'string' ? data[key] : JSON.stringify(data[key]));
+      $form.find('input[name*=' + key + ']').val(typeof data[key] === 'string' ? data[key] : JSON.stringify(data[key]));
     }
     $form.find('input[name=search]').val(data.name + ' by ' + data.artist)
   };
@@ -87,4 +95,4 @@
         .on('keyup', navigate);
   });
 
-})(jQuery);
+}(jQuery));

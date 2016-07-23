@@ -4,7 +4,7 @@
   -webkit-font-smoothing: antialiased;
   background: $slate;
   color: $white;
-  font-family: 'Tallow TC', $body-font-family;
+  font-family: $block-font;
 
   a {
     &,
@@ -36,6 +36,16 @@
 
     &:hover::before {
       border-right-color: $light-plum;
+    }
+  }
+
+  .dropdown.menu > li.is-dropdown-submenu-parent > a {
+    &::after {
+      border-top-color: $white;
+    }
+
+    &:hover::after {
+      border-top-color: $light-plum;
     }
   }
 }

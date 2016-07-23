@@ -4,6 +4,14 @@ main {
   @include breakpoint(medium) {
     padding-top: rem-calc(57);
 
+    > section {
+      padding-bottom: rem-calc(57);
+
+      h2 {
+        color: $light-plum;
+      }
+    }
+
     > section + section {
       padding-top: rem-calc(57);
     }
@@ -32,13 +40,14 @@ h3,
 h4,
 h5,
 h6 {
+  font-weight: normal;
+
   small,
   &.subheader {
     font-family: $block-font;
   }
 }
 
-h2,
 h3,
 h4,
 h5,
