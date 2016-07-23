@@ -1,11 +1,49 @@
 .top-bar,
 .title-bar {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: $slate;
+  color: $white;
   font-family: 'Tallow TC', $body-font-family;
+
+  a {
+    &,
+    &:link,
+    &:visited {
+      color: $white;
+      font-weight: normal;
+
+      &:hover {
+        color: $light-plum;
+      }
+    }
+  }
+
+  .is-drilldown-submenu-parent > a {
+    &::after {
+      border-left-color: $white;
+    }
+
+    &:hover::after {
+      border-left-color: $light-plum;
+    }
+  }
+
+  .js-drilldown-back > a {
+    &::before {
+      border-right-color: $white;
+    }
+
+    &:hover::before {
+      border-right-color: $light-plum;
+    }
+  }
 }
 
 .top-bar {
   font-size: 1.2rem;
-  position: relative;
+  position: fixed;
+  width: 100%;
   z-index: 6;
 
   .is-dropdown-submenu {
@@ -16,4 +54,13 @@
 .title-bar {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+
+  .title-bar-title {
+    font-weight: normal;
+    margin-left: .4em;
+  }
+}
+
+.menu-text {
+  font-weight: normal;
 }

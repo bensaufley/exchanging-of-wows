@@ -1,8 +1,18 @@
 .page-footer {
   background: #333;
-  color: #fff;
+  color: $white;
   padding: map-get($grid-column-gutter, small) / 2;
   text-align: center;
+
+  a:link,
+  a:visited {
+    border-bottom: 1px dashed;
+    color: $white;
+
+    &:hover {
+      border-bottom: 1px solid;
+    }
+  }
 
   @include breakpoint(medium) {
     padding: map-get($grid-column-gutter, medium) / 2;

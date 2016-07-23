@@ -1,0 +1,19 @@
+#where-when {
+  @extend %white-wood;
+
+  h3,
+  h4,
+  h5 {
+    text-shadow: 0 -1px 2px transparentize($black, .3), 0 1px 2px $white;
+  }
+
+  h3 {
+    color: $light-plum;
+  }
+
+  h4,
+  h5 {
+    color: $plum;
+    line-height: 1;
+  }
+}

@@ -1,11 +1,11 @@
 = form_for @song_request, html: { id: 'song-request-form', autocomplete: 'off' } do |song_request_form|
   .row
-    .medium-4.columns= label_tag 'search', 'Search', class: 'middle'
-    .medium-8.columns
+    .large-4.columns= label_tag 'search', 'Search', class: 'middle'
+    .large-8.columns
       .relative= text_field_tag 'search', '', placeholder: 'Song Name'
   = song_request_form.hidden_field :name, required: true
   = song_request_form.hidden_field :artist, required: true
   = song_request_form.hidden_field :album, required: true
   = song_request_form.hidden_field :info, required: true
   .row
-    .medium-8.medium-offset-4.columns = song_request_form.button 'Request', type: :submit, class: 'button expanded'
+    .large-8.large-offset-4.columns = song_request_form.button 'Request', type: :submit, class: 'button expanded'

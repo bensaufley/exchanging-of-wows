@@ -1,11 +1,11 @@
 $photo-count: 74;
-$section-count: 6;
+$section-count: 5;
 $page-height: $section-count * 90;
 
 @include breakpoint(medium) {
   main > section {
     // need this on a new container element - affecting the topbar too currently
-    padding-left: ((2 * $page-height / $photo-count) + (2 * $page-height / ($photo-count * 3))) / 3 * 8 + vh;
+    padding-left: ((2 * $page-height / $photo-count) + (2 * $page-height / ($photo-count * 3))) / 3 * 8 - ($page-height / ($photo-count * 3)) + vh;
   }
 }
 
@@ -13,7 +13,7 @@ $page-height: $section-count * 90;
   display: none;
 
   @include breakpoint(medium) {
-    background: linear-gradient(to right, #333, transparentize(#333, 1) 70%);
+    background: linear-gradient(to right, $slate, transparentize($slate, 1) 70%);
     bottom: 0;
     display: block;
     left: -($page-height / ($photo-count * 3)) + vh;
@@ -25,14 +25,14 @@ $page-height: $section-count * 90;
   }
 
   li {
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .6));
+    filter: drop-shadow(0 2px 4px transparentize($slate, .3));
     float: left;
     margin-top: -(2 * $page-height / ($photo-count * 3)) + vh;
     position: relative;
     transition: transform .5s;
 
     img {
-      border: solid #fff;
+      border: solid $white;
       border-width: 1vh;
       cursor: default;
       max-height: (2 * $page-height / $photo-count) + (2 * $page-height / ($photo-count * 3)) + vh;

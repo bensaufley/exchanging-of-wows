@@ -1,10 +1,22 @@
 main {
   position: relative;
+  
+  @include breakpoint(medium) {
+    padding-top: rem-calc(57);
+
+    > section + section {
+      padding-top: rem-calc(57);
+    }
+  }
 
   section {
+    align-items: center;
     background-attachment: fixed;
     background-position: right center;
     background-size: cover;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
     min-height: 90vh;
 
     > .row {
@@ -22,7 +34,7 @@ h5,
 h6 {
   small,
   &.subheader {
-    font-family: 'Tallow TC', $body-font-family;
+    font-family: $block-font;
   }
 }
 
@@ -31,13 +43,18 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Tallow TC', $body-font-family;
+  font-family: $block-font;
 
   span {
-    font-family: 'Midnight', script;
+    font-family: $script-font;
   }
 }
 
 .relative {
   position: relative;
+}
+
+%white-wood {
+  background-attachment: scroll;
+  background-image: image-url('white-wood.jpg');
 }

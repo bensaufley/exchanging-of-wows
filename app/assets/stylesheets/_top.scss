@@ -2,7 +2,46 @@
   background-image: image-url('the-location.jpg');
   background-position: center;
 
+  h2 {
+    color: $light-plum;
+    font-family: $script-font;
+    text-shadow: 0 0 12px $white;
+
+    small {
+      color: $light-plum;
+      font-family: $script-font;
+    }
+  }
+}
+
+.roundel {
+  background-color: transparentize($white, .5);
+  border-radius: 100%;
+  display: inline-block;
+  margin: 0 auto 5vh;
+  padding: 3em 5em;
+  width: auto;
+
   h1 {
-    text-shadow: 0 0 12px #fff;
+    color: $plum;
+    font-family: $script-font;
+    line-height: 1;
+
+    span,
+    strong {
+      display: block;
+    }
+
+    span {
+      color: $light-plum;
+      font-family: $block-font;
+      font-size: .3em;
+    }
+
+    strong {
+      font-size: .7em;
+      font-weight: normal;
+      line-height: .7;
+    }
   }
 }
