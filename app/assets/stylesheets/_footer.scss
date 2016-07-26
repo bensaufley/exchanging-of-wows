@@ -1,5 +1,6 @@
 .page-footer {
-  background: #333;
+  background: $slate image-url('chalkboard.jpg') no-repeat;
+  background-size: cover;
   color: $white;
   padding: map-get($grid-column-gutter, small) / 2;
   text-align: center;

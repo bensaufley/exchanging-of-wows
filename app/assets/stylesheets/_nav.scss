@@ -2,7 +2,8 @@
 .title-bar {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: $slate;
+  background: $slate image-url('chalkboard.jpg') no-repeat;
+  background-size: cover;
   color: $white;
   font-family: $block-font;
 

@@ -66,4 +66,6 @@ h6 {
 %white-wood {
   background-attachment: scroll;
   background-image: image-url('white-wood.jpg');
+  border-bottom: 3px solid transparentize($black, .8);
+  border-top: 3px solid transparentize($white, .2);
 }
