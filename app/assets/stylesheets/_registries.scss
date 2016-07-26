@@ -1,8 +1,8 @@
 #registries {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  background: $slate image-url('chalkboard.jpg') no-repeat center;
   background-attachment: scroll;
-  background-image: image-url('chalkboard.jpg');
   border-bottom: 3px solid transparentize($black, .7);
   border-top: 3px solid transparentize($white, .8);
   color: transparentize($white, .1);
