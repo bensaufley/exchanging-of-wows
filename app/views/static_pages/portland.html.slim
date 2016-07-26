@@ -1,5 +1,5 @@
 ul.portland-photos
   - (1..10).each do |photo_num|
-    li class="photo-#{photo_num.to_s.rjust(2, '0')}" = image_tag "portland/portland - #{photo_num.to_s.rjust(2, '0')}", alt: '', data: { pin_no_hover: true }
+    li class="photo-#{photo_num.to_s.rjust(2, '0')}" = image_tag "portland/portland - #{photo_num.to_s.rjust(2, '0')}.jpg", alt: '', data: { pin_no_hover: true }
 section.no-right-bump#about-portland
   h1 About Portland
