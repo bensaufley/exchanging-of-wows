@@ -4,7 +4,8 @@ class Admin::RsvpsController < AdminController
   # GET /rsvps
   # GET /rsvps.json
   def index
-    @rsvps = Rsvp.all
+    @rsvps = Rsvp.all.order(:last_name, :first_name)
+    @rsvp_count = Rsvp.head_count
   end
 
   # GET /rsvps/1
@@ -24,16 +25,16 @@ class Admin::RsvpsController < AdminController
   # POST /rsvps
   # POST /rsvps.json
   def create
-    @rsvp = Rsvp.new(rsvp_params)
+    @rsvp = Rsvp.new(rsvp_params.merge(ip: request.remote_ip))
+    message = @rsvp.attending? ? 'We look forward to seeing you' : 'We’re sorry you can’t make it'
 
-    @rsvp.ip = request.remote_ip
     respond_to do |format|
       if @rsvp.save
-        format.html { redirect_to root_path, notice: 'RSVP was successfully created.' }
-        format.json { render :show, status: :created, location: @rsvp }
+        format.html { redirect_to root_path, notice: "Thank you for your RSVP! #{message}." }
+        format.json { render json: { status: :ok, notice: "Thank you for your RSVP! #{message}." }, status: :created }
       else
         format.html { render :new }
-        format.json { render json: @rsvp.errors, status: :unprocessable_entity }
+        format.json { render json: { status: :error, errors: @rsvp.errors.full_messages.to_sentence }, status: :unprocessable_entity }
       end
     end
   end
@@ -41,13 +42,15 @@ class Admin::RsvpsController < AdminController
   # PATCH/PUT /rsvps/1
   # PATCH/PUT /rsvps/1.json
   def update
+    @rsvp.assign_attributes(rsvp_params)
+
     respond_to do |format|
-      if @rsvp.update(rsvp_params)
-        format.html { redirect_to root_path, notice: 'RSVP was successfully updated.' }
-        format.json { render :show, status: :ok, location: @rsvp }
+      if @rsvp.save
+        format.html { redirect_to rsvps_path, notice: "The RSVP has been updated." }
+        format.json { render json: { status: :ok, notice: "Your RSVP has been updated." }, status: :created }
       else
         format.html { render :edit }
-        format.json { render json: @rsvp.errors, status: :unprocessable_entity }
+        format.json { render json: { status: :error, errors: @rsvp.errors.full_messages.to_sentence }, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +60,7 @@ class Admin::RsvpsController < AdminController
   def destroy
     @rsvp.destroy
     respond_to do |format|
-      format.html { redirect_to rsvps_url, notice: 'Rsvp was successfully destroyed.' }
+      format.html { redirect_to rsvps_url, notice: 'RSVP was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,11 +73,10 @@ class Admin::RsvpsController < AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def rsvp_params
-    params.require(:rsvp).permit(:first_name, :last_name, :guests)
+    params.require(:rsvp).permit(:first_name, :last_name, :plus_one, :attending, :notes)
   end
 
   def action_is_public?
-    redirect_to(root_path, notice: 'Cannot edit that RSVP') and return if (action_name == 'update' && Rsvp.find_by(id: params[:id]).ip != request.remote_ip)
-    action_name.in? %w(create update)
+    action_name.in? %w(create)
   end
 end

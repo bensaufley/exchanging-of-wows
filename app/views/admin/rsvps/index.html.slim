@@ -1,26 +1,33 @@
-h1 Listing rsvps
+.row
+  .column
+    h1 rsvps
 
-table
-  thead
-    tr
-      th First name
-      th Last name
-      th Guests
-      th Food
-      th
-      th
-      th
+    table
+      thead
+        tr
+          th
+          th Name
+          th
+          th Notes
+          th
 
-  tbody
-    - @rsvps.each do |rsvp|
-      tr
-        td = rsvp.first_name
-        td = rsvp.last_name
-        td = rsvp.guests
-        td = link_to 'Show', rsvp
-        td = link_to 'Edit', edit_rsvp_path(rsvp)
-        td = link_to 'Destroy', rsvp, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Rsvp', new_rsvp_path
+      tbody
+        - @rsvps.each do |rsvp|
+          tr
+            td.text-center == rsvp.attending? ? 'Attending' : '&times'
+            td
+              = rsvp.first_name
+              '
+              strong = rsvp.last_name
+            td.text-center == rsvp.plus_one? ? 'Plus One' : '&times;'
+            td = rsvp.notes
+            td.text-right
+              = link_to 'Edit', edit_rsvp_path(rsvp)
+              '
+              = link_to 'Destroy', rsvp, data: { confirm: 'Are you sure?' }, method: :delete
+        tr
+          td.text-center = @rsvp_count
+          td
+          td
+          td
+          td

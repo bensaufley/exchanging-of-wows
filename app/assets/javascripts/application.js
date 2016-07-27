@@ -31,24 +31,24 @@
 // require foundation.slider
 // require foundation.sticky
 // require foundation.tabs
-// require foundation.toggler
+//= require foundation.toggler
 // require foundation.tooltip
 //= require foundation.util.box
 //= require foundation.util.keyboard
 //= require foundation.util.mediaQuery
 // require foundation.util.motion
 //= require foundation.util.nest
-// require foundation.util.timerAndImageLoader
-// require foundation.util.touch
-// require foundation.util.triggers
+//= require foundation.util.timerAndImageLoader
+//= require foundation.util.touch
+//= require foundation.util.triggers
 //= require_self
 //= require song_requests
 //
 
-$.ajaxSetup({
+jQuery.ajaxSetup({
   dataType: 'json'
 });
 
-$(function() {
+jQuery(function() {
   $(document).foundation();
 });

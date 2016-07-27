@@ -1,4 +1,4 @@
-= form_for @rsvp, data: { remote: true } do |rsvp_form|
+= form_for rsvp, data: { remote: !rsvp.persisted? } do |rsvp_form|
   .row
     .medium-4.columns = rsvp_form.label :first_name, 'Name', class: 'middle'
     .medium-8.columns
@@ -6,13 +6,19 @@
         .small-6.columns = rsvp_form.text_field :first_name, placeholder: Rsvp.human_attribute_name(:first_name)
         .small-6.columns = rsvp_form.text_field :last_name, placeholder: Rsvp.human_attribute_name(:last_name)
   .row
+    .medium-4.columns.text-right.show-for-medium-up
     .medium-8.medium-offset-4.columns
-      = rsvp_form.check_box :plus_one
-      = rsvp_form.label :plus_one
+      div
+        = rsvp_form.radio_button :attending, true
+        = rsvp_form.label :attending, 'Attending', value: true
+        = rsvp_form.check_box :plus_one
+        = rsvp_form.label :plus_one
+      = rsvp_form.radio_button :attending, false
+      = rsvp_form.label :attending, 'Not Attending', value: false
   .row
     .medium-4.columns
       = rsvp_form.label :notes, class: 'middle'
     .medium-8.columns
       = rsvp_form.text_area :notes, placeholder: 'Notes'
   .row
-    .medium-8.medium-offset-4.columns = rsvp_form.button 'RSVP', type: :submit, class: 'button expanded'
+    .medium-8.medium-offset-4.columns = rsvp_form.button (rsvp.persisted? ? 'Update' : 'RSVP'), type: :submit, class: 'button expanded'
