@@ -36,8 +36,6 @@
   };
 
   $(function() {
-    $('.arch').lettering();
-
     $('#rsvp').on({
       'ajax:success': ajaxSuccess,
       'ajax:error': ajaxError

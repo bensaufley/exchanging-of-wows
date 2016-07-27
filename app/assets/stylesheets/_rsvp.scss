@@ -19,7 +19,6 @@
     background: transparentize($white, .25);
     padding-bottom: map-get($grid-column-gutter, small) / 2;
     padding-top: map-get($grid-column-gutter, small) / 2;
-    width: 100%;
 
     @include breakpoint(medium) {
       padding-bottom: map-get($grid-column-gutter, small) / 2;

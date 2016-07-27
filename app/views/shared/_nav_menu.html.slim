@@ -7,4 +7,9 @@ li
     li= link_to 'Registries', root_path(anchor: 'registries')
     li= link_to 'Song Requests', root_path(anchor: 'song-requests')
 li= link_to 'About Portland', portland_path
-li= link_to 'About Jelena & Ben', jelena_ben_path
+li
+  = link_to 'About Jelena & Ben', jelena_ben_path(anchor: '')
+  ul.menu.vertical
+    li = link_to 'The Couple', jelena_ben_path(anchor: '')
+    li = link_to '“Exchanging of Wows?”', jelena_ben_path(anchor: 'the-name')
+    li = link_to 'Pronunciation Key', jelena_ben_path(anchor: 'pronunciation-key') 
