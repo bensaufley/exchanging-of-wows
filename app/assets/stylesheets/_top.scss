@@ -2,6 +2,11 @@
   background-image: image-url('the-location.jpg');
   background-position: center;
 
+  h1,
+  h3.date {
+    text-shadow: 0 -2px 0 $white, 2px 0 0 $white, 0 2px 0 $white, -2px 0 0 $white;
+  }
+
   h1 {
     color: $plum;
     font-family: $script-font;
