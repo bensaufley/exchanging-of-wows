@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   namespace :admin, as: '', path: '' do
     get 'song_requests/search', to: 'song_requests#search', as: :song_request_search
-    resources :rsvps, :song_requests
+    resources :rsvps, only: [:index, :create, :edit, :update, :destroy] # No show or new
+    resources :song_requests
   end
   root to: 'static_pages#home'
 end

@@ -8,11 +8,6 @@ class Admin::RsvpsController < AdminController
     @rsvp_count = Rsvp.head_count
   end
 
-  # GET /rsvps/1
-  # GET /rsvps/1.json
-  def show
-  end
-
   # GET /rsvps/new
   def new
     @rsvp = Rsvp.new
@@ -46,7 +41,7 @@ class Admin::RsvpsController < AdminController
 
     respond_to do |format|
       if @rsvp.save
-        format.html { redirect_to rsvps_path, notice: "The RSVP has been updated." }
+        format.html { redirect_to rsvps_url, notice: "The RSVP has been updated." }
         format.json { render json: { status: :ok, notice: "Your RSVP has been updated." }, status: :created }
       else
         format.html { render :edit }

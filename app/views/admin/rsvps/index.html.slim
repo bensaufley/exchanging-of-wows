@@ -19,6 +19,8 @@
               = rsvp.first_name
               '
               strong = rsvp.last_name
+              '
+              small = link_to rsvp.ip, 'http://ip-lookup.net/index.php?ip=' + rsvp.ip, target: :_blank
             td.text-center == rsvp.plus_one? ? 'Plus One' : '&times;'
             td = rsvp.notes
             td.text-right
