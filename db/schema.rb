@@ -10,20 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726232836) do
+ActiveRecord::Schema.define(version: 20160807033004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "rsvps", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.boolean  "plus_one"
     t.text     "notes"
     t.string   "ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean  "attending"
+    t.string   "names"
   end
 
   create_table "song_requests", force: :cascade do |t|
