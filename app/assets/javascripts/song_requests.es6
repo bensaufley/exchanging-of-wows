@@ -12,11 +12,14 @@
   var search = function() {
     var _this = this,
         $this = $(this);
+    $form.find('input.hide').val('')
+      .filter('[name*=info]').val('{}'); 
     if (_this.value) {
       $.ajax({
         url: '/song_requests/search',
         data: { search: this.value },
         success: function (data) {
+          if (!$this.is(':focus')) { return; }
           $('.search-results').remove();
           let pos = $(_this).position();
           $('<ul>', {

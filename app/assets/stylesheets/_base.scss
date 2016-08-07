@@ -1,4 +1,5 @@
 main {
+  padding-top: rem-calc(40);
   position: relative;
   
   @include breakpoint(medium) {
@@ -19,13 +20,17 @@ main {
 
   section {
     align-items: center;
-    background-attachment: fixed;
     background-position: right center;
+    background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     min-height: 90vh;
+
+    @include breakpoint(large) {
+      background-attachment: fixed;
+    }
 
     > .row {
       position: relative;

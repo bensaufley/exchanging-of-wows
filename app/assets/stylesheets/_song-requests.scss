@@ -4,6 +4,15 @@
   > .row {
     width: 100%;
   }
+
+  [type=submit] {
+    transition: opacity .3s, color .3s;
+  }
+  
+  :invalid ~ .row [type=submit] {
+    background: $slate;
+    opacity: .7;
+  }
 }
 
 .search-results {
@@ -17,6 +26,7 @@
   padding-left: 0;
   position: absolute;
   width: 100%;
+  z-index: 8;
 
   li {
     cursor: pointer;

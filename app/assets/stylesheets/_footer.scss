@@ -2,8 +2,11 @@
   background: $slate image-url('chalkboard.jpg') no-repeat;
   background-size: cover;
   color: $white;
+  min-height: 20vh;
   padding: map-get($grid-column-gutter, small) / 2;
+  position: relative;
   text-align: center;
+  z-index: 5;
 
   a:link,
   a:visited {

@@ -36,7 +36,7 @@
   };
 
   $(function() {
-    $('#rsvp').on({
+    $('#rsvp, #song-requests').on({
       'ajax:success': ajaxSuccess,
       'ajax:error': ajaxError
     }, 'form');

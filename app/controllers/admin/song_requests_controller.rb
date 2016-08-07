@@ -20,10 +20,10 @@ class Admin::SongRequestsController < AdminController
     respond_to do |format|
       if @song_request.save
         format.html { redirect_to root_path, notice: 'Song Request was successfully submitted.' }
-        format.json { render :show, status: :created, location: @song_request }
+        format.json { render json: { status: :ok, notice: "Thank you for your request! We’ll see what we can do." }, status: :created }
       else
         format.html { render :new }
-        format.json { render json: @song_request.errors, status: :unprocessable_entity }
+        format.json { render json: { status: :error, errors: @song_request.errors.full_messages.to_sentence }, status: :unprocessable_entity }
       end
     end
   end

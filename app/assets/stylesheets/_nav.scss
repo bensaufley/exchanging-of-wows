@@ -2,10 +2,13 @@
 .title-bar {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: $slate image-url('chalkboard.jpg') no-repeat;
-  background-size: cover;
+  background: $slate image-url('chalkboard.jpg') no-repeat fixed;
+  background-size: 100% auto;
   color: $white;
   font-family: $block-font;
+  position: fixed;
+  width: 100%;
+  z-index: 6;
 
   a {
     &,
@@ -74,4 +77,13 @@
 
 .menu-text {
   font-weight: normal;
+}
+
+#responsive-menu {
+  top: rem-calc(40);
+}
+
+.top-bar ul {
+  background: $slate image-url('chalkboard.jpg') no-repeat fixed;
+  background-size: 100% auto;
 }
