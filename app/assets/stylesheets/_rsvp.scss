@@ -1,3 +1,22 @@
+#rsvp,
+#song-requests {
+  > .row {
+    background: transparentize($white, .25);
+    padding-bottom: map-get($grid-column-gutter, small) / 2;
+    padding-top: map-get($grid-column-gutter, small) / 2;
+
+    @include breakpoint(medium) {
+      padding-bottom: map-get($grid-column-gutter, small) / 2;
+      padding-top: map-get($grid-column-gutter, small) / 2;
+      width: 80%;
+    }
+
+    @include breakpoint(large) {
+      width: 60%;
+    }
+  }
+}
+
 #rsvp {
   background-image: image-url('leaves.jpg');
 
@@ -12,22 +31,6 @@
 
     @include breakpoint(medium) {
       height: 8em;
-    }
-  }
-
-  > .row {
-    background: transparentize($white, .25);
-    padding-bottom: map-get($grid-column-gutter, small) / 2;
-    padding-top: map-get($grid-column-gutter, small) / 2;
-
-    @include breakpoint(medium) {
-      padding-bottom: map-get($grid-column-gutter, small) / 2;
-      padding-top: map-get($grid-column-gutter, small) / 2;
-      width: 80%;
-    }
-
-    @include breakpoint(large) {
-      width: 60%;
     }
   }
 }

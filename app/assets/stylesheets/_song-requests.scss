@@ -1,10 +1,6 @@
 #song-requests {
   background-image: none;
 
-  > .row {
-    width: 100%;
-  }
-
   [type=submit] {
     transition: opacity .3s, color .3s;
   }
