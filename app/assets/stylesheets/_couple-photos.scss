@@ -1,5 +1,5 @@
 @include breakpoint(medium) {
-  main > section {
+  .photoset ~ section {
     // need this on a new container element - affecting the topbar too currently
     padding-left: 15vw;
   }
@@ -74,10 +74,12 @@
   }
 }
 
-.couple-photos {
-  @include photoset(74);
-}
+ul.photoset {
+  &.couple {
+    @include photoset(74);
+  }
 
-.portland-photos {
-  @include photoset(10);
+  &.portland {
+    @include photoset(10);
+  }
 }

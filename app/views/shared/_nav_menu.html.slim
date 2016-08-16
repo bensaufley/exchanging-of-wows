@@ -1,12 +1,19 @@
-li= link_to 'Home', root_path(anchor: '')
+li = link_to 'Home', root_path(anchor: '')
 li
   = link_to 'The Event', root_path(anchor: '')
   ul.menu.vertical
-    li= link_to 'Where and When', root_path(anchor: 'where-when')
-    li= link_to 'RSVP', root_path(anchor: 'rsvp')
-    li= link_to 'Registry', root_path(anchor: 'registry')
-    li= link_to 'Song Requests', root_path(anchor: 'song-requests')
-li= link_to 'About Portland', portland_path
+    li = link_to 'Where and When', root_path(anchor: 'where-when')
+    li = link_to 'RSVP', root_path(anchor: 'rsvp')
+    li = link_to 'Registry', root_path(anchor: 'registry')
+    li = link_to 'Song Requests', root_path(anchor: 'song-requests')
+li
+  = link_to 'About the Area', portland_path
+  ul.menu.vertical
+    li = link_to 'Portland', portland_path(anchor: '')
+    li = link_to 'Centerboard Yacht Club', portland_path(anchor: 'cyc')
+    li = link_to 'Attractions', portland_path(anchor: 'attractions')
+    li = link_to 'Breweries', portland_path(anchor: 'breweries')
+    li = link_to 'Hotels', portland_path(anchor: 'hotels')
 li
   = link_to 'About Jelena & Ben', jelena_ben_path(anchor: '')
   ul.menu.vertical

@@ -1,5 +1,6 @@
 #rsvp,
-#song-requests {
+#song-requests,
+#portland {
   > .row {
     background: transparentize($white, .25);
     padding-bottom: map-get($grid-column-gutter, small) / 2;

@@ -1,46 +1,90 @@
-ul.portland-photos
-  - (1..10).each do |photo_num|
-    li class="photo-#{photo_num.to_s.rjust(2, '0')}" = image_tag "portland/portland - #{photo_num.to_s.rjust(2, '0')}.jpg", alt: '', data: { pin_no_hover: true }
-section.no-right-bump#about-portland
-  h1 About Portland
-  / Ben & Jelena's history in Portland
-  / A bit about South Portland & the wedding site
+/ ul.portland.photoset
+/   - (1..10).each do |photo_num|
+/     li class="photo-#{photo_num.to_s.rjust(2, '0')}" = image_tag "portland/portland - #{photo_num.to_s.rjust(2, '0')}.jpg", alt: '', data: { pin_no_hover: true }
+section#portland
+  .row
+    .column
+      h1.text-center = link_to 'Portland', 'http://www.portlandmaine.com', target: '_blank'
+      p Ben was born and raised in Greater Portland, and Jelena has called Portland home since the
+        age of 11. Both have deep roots in Maine, and friends and family throughout New England.
+      p Portland is a beautiful city with a thriving art and music scene, lots of independent businesses,
+        a ton of great breweries, and the full range of seasons – from blistering summers, to gorgeous fall foliage,
+        to frigid, deep-snowed winters. It’s not a big city, but it’s got plenty of stuff going on all the same –
+        it’s a very Maine place, and Ben and Jelena love it.
 
-  h2 Attractions 
-    h3 The Old Port
-    / Bull Moose, Casablanca Comics
-    / Exchange Street
-    / Restaurants: Duck Fat, Nosh, Taco Escobar, EVO, DiMillo’s Floating Restaurant, 3-Dollar Dewey’s etc
-    / Bayside Bowl
-    h3 Peak’s Island
-    h3 Maine Mall
-    h3 = link_to 'Portland Head Light & Fort Williams', 'https://portlandheadlight.com/', target: '_blank'
-    h3 = link_to 'L.L. Bean', 'http://www.llbean.com/llb/shop/1000001705?page=store-flagship'
-  
-  h2 The Centerboard Yacht Club
-  / Grampy was commodore for the CYC
-  
-  h2 Breweries
-  / Allagash
-  / Shipyard/Seadog
-  / Geary’s
-  / Gritty’s
-  / Bissell Brothers
-  / Foundation
-  / Rising Tide
-  / Baxter
-  / Maine Beer Co
+section#cyc
+  .row
+    .medium-10.large-8.medium-centered.columns
+      h2.text-center = link_to 'The Centerboard Yacht&nbsp;Club'.html_safe, 'http://www.centerboardyachtclub.org/', target: '_blank'
+      p The Centerboard Yacht Club in South Portland is right next to Ben’s Grandparents’ house, and for that reason
+        and Ben’s grandfather’s connection with the CYC – Grampy was at one point the commodore, and he
+        remains a life member – it was chosen as an ideal location for the reception. The ceremony will take place
+        on a nearby lawn, with both the ceremony and the reception overlooking Portland Harbor and the skyline
+        of Portland.
 
-  h2 Hotels
-  / Hyatt
-  / Residence Inn
-  / Courtyard Marriott
-  / Portland Harbor Inn
-  / Hilton Garden Inn at the Airport
+section#attractions
+  .row
+    .medium-10.large-8.medium-centered.columns
+      h2.text-center Attractions 
+      h5 Downtown/The Old Port
+      p The Old Port is the name for the cobblestoned area of downtown leading up to the water of Portland Harbor. The
+        downtown district extends outside of the official bounds of the Old Port, which acts as a sort of focal point.
+        #{link_to 'Check out this map', 'http://www.portlandmaine.com/explore-downtown/downtown-map/', target: '_blank'}
+        for a rough overview of the area.
+      p In the Old Port/downtown area of Portland, there are hotels (more on that #{link_to 'below', '#hotels'}),
+        restaurants – like Duckfat, Nosh, Taco Escobar, Evo, DiMillo’s Floating Restaurant, 3-Dollar Dewey’s, and more
+        (again, see #{link_to 'below', '#restaurants'} for specific recommendations), the Nickelodeon movie theater,
+        and a bunch of shops.
+      p Exchange Street runs through the heart of the Old Port and tends to be a good place to start. The whole downtown
+        area is very walkable, but wear comfortable shoes for the cobblestones. Exchange Street is also the home of
+        #{link_to 'The Holy Donut', 'https://theholydonut.com/', target: '_blank'}, which makes amazing Maine potato donuts.
+      p Just around the corner from Exchange Street is a small complex featuring two of Ben’s favorite downtown places:
+        #{link_to 'Bull Moose Music', 'http://www.bullmoose.com/', target: '_blank'}, whose website sucks but whose Portland
+        location is far preferable over Newbury Comics; and #{link_to 'Casablanca Comics', 'http://www.casablancacomics.com/', target: '_blank'},
+        which is just a great comic shop.
+      p Also worth checking out just outside the bounds of downtown is #{link_to 'Bayside Bowl', 'http://www.baysidebowl.com/', target: '_blank'},
+        which has good beer (Lunch on draft!) and candlepin bowling.
+      h5 Other Stuff
+      h6.text-center
+        = link_to 'Peak’s Island', 'http://www.peaksisland.com/', target: '_blank'
+        ' •
+        = link_to 'Maine Mall', 'https://www.mainemall.com', target: '_blank'
+        ' •
+        = link_to 'Portland Head Light & Fort Williams', 'https://portlandheadlight.com/', target: '_blank'
+        ' •
+        = link_to 'L.L. Bean', 'http://www.llbean.com/llb/shop/1000001705?page=store-flagship', target: '_blank'
   
-  h2 Restaurants
-  / Salt Water Grille - http://www.saltwatergrille.com/
-  / The Green Elephant - http://greenelephantmaine.com/
-  / Bayside American Cafe - http://www.baysideamericancafe.com/
-  / Outliers - http://outlierseatery.com/
-  / Amato's - http://amatos.com
+section#breweries
+  .row
+    .medium-10.large-8.medium-centered.columns
+      h2 Breweries
+      / Allagash
+      / Shipyard/Seadog
+      / Geary’s
+      / Gritty’s
+      / Bissell Brothers
+      / Foundation
+      / Rising Tide
+      / Baxter
+      / Maine Beer Co
+
+section#hotels
+  .row
+    .medium-10.large-8.medium-centered.columns
+      h2 Hotels
+      / Hyatt
+      / Residence Inn
+      / Courtyard Marriott
+      / Portland Harbor Inn
+      / Hilton Garden Inn at the Airport
+      / Regions? for Airbnb
+
+section#restuarants
+  .row
+    .medium-10.large-8.medium-centered.columns
+      h2 Restaurants
+      / Salt Water Grille - http://www.saltwatergrille.com/
+      / The Green Elephant - http://greenelephantmaine.com/
+      / Bayside American Cafe - http://www.baysideamericancafe.com/
+      / Outliers - http://outlierseatery.com/
+      / Amato's - http://amatos.com/
