@@ -4,7 +4,7 @@ class Admin::RsvpsController < AdminController
   # GET /rsvps
   # GET /rsvps.json
   def index
-    @rsvps = Rsvp.all.order(:last_name, :first_name)
+    @rsvps = Rsvp.all.order(:names)
     @rsvp_count = Rsvp.head_count
   end
 

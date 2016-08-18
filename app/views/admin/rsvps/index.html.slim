@@ -7,7 +7,6 @@
         tr
           th
           th Name
-          th
           th Notes
           th
 
@@ -16,12 +15,9 @@
           tr
             td.text-center == rsvp.attending? ? 'Attending' : '&times'
             td
-              = rsvp.first_name
-              '
-              strong = rsvp.last_name
+              = rsvp.names
               '
               small = link_to rsvp.ip, 'http://ip-lookup.net/index.php?ip=' + rsvp.ip, target: :_blank
-            td.text-center == rsvp.plus_one? ? 'Plus One' : '&times;'
             td = rsvp.notes
             td.text-right
               = link_to 'Edit', edit_rsvp_path(rsvp)
@@ -29,7 +25,6 @@
               = link_to 'Destroy', rsvp, data: { confirm: 'Are you sure?' }, method: :delete
         tr
           td.text-center = @rsvp_count
-          td
           td
           td
           td
