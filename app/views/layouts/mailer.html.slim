@@ -8,5 +8,6 @@ html
   body
     css:
       #{Rails.application.assets.find_asset('mailer.css').to_s}
-    #container= yield
+    #outer
+      #container= yield
 
