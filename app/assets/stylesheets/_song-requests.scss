@@ -1,5 +1,5 @@
 #song-requests {
-  background-image: none;
+  @extend %white-wood;
 
   [type=submit] {
     transition: opacity .3s, color .3s;

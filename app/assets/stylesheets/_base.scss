@@ -1,3 +1,26 @@
+body {
+  background: #fff image-url('watercolor-stripe.jpg') no-repeat 5% center;
+  background-attachment: fixed;
+  background-size: auto 100vh;
+
+  .touch & {
+    background: transparent;
+
+    &:before {
+      background: #fff image-url('watercolor-stripe.jpg') no-repeat 5% center;
+      background-size: auto 120vh;
+      content: '\00A0';
+      display: block;
+      height: 120vh;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: -1;
+    }
+  }
+}
+
 main {
   padding-top: rem-calc(40);
   position: relative;
@@ -20,6 +43,7 @@ main {
 
   section {
     align-items: center;
+    background-attachment: fixed;
     background-position: right center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,8 +52,8 @@ main {
     justify-content: center;
     min-height: 90vh;
 
-    @include breakpoint(large) {
-      background-attachment: fixed;
+    .touch & {
+      background-attachment: scroll;
     }
 
     > .row {
