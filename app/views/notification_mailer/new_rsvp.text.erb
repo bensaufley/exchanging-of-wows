@@ -1,0 +1,10 @@
+New RSVP
+From: <%= @rsvp.names.to_sentence %>
+Attending: <%= @rsvp.attending? ? 'Yes' : 'No' %>
+
+<%- if @rsvp.notes.present? %>
+Notes:
+<%= @rsvp.notes %>
+<%- end %>
+
+View All RSVPs (<%= Rsvp.head_count %> attending): <%= rsvps_url %>

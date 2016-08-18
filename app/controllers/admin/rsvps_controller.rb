@@ -25,6 +25,7 @@ class Admin::RsvpsController < AdminController
 
     respond_to do |format|
       if @rsvp.save
+        NotificationMailer.new_rsvp(@rsvp).deliver
         format.html { redirect_to root_path, notice: "Thank you for your RSVP! #{message}." }
         format.json { render json: { status: :ok, notice: "Thank you for your RSVP! #{message}." }, status: :created }
       else

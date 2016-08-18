@@ -7,6 +7,6 @@ class Rsvp < ApplicationRecord
   end
 
   def self.head_count
-    all.map(&:names).flatten.length
+    where(attending: true).map(&:names).flatten.length
   end
 end

@@ -1,0 +1,16 @@
+h1 New RSVP
+p
+  strong From:
+  '
+  = @rsvp.names.to_sentence
+  br
+  strong Attending:
+  '
+  = @rsvp.attending? ? 'Yes' : 'No'
+- if @rsvp.notes.present?
+  p
+    strong Notes:
+    br
+    = @rsvp.notes
+p = link_to "View All RSVPs (#{Rsvp.head_count} attending)", rsvps_url
+
