@@ -38,6 +38,7 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (7.0.0)
     autoprefixer-rails (6.3.6.2)
       execjs
@@ -49,6 +50,8 @@ GEM
     byebug (9.0.5)
     coderay (1.1.1)
     concurrent-ruby (1.0.2)
+    css_parser (1.4.5)
+      addressable
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     dotenv (2.1.1)
@@ -69,6 +72,7 @@ GEM
       sprockets-es6 (>= 0.9.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    htmlentities (4.3.4)
     i18n (0.7.0)
     jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -97,6 +101,12 @@ GEM
       pkg-config (~> 1.1.7)
     pg (0.18.4)
     pkg-config (1.1.7)
+    premailer (1.8.7)
+      css_parser (>= 1.4.5)
+      htmlentities (>= 4.0.0)
+    premailer-rails (1.9.4)
+      actionmailer (>= 3, < 6)
+      premailer (~> 1.7, >= 1.7.9)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -210,7 +220,9 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  nokogiri
   pg (~> 0.18)
+  premailer-rails
   pry
   pry-byebug
   puma (~> 3.0)

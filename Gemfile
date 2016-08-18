@@ -12,6 +12,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'foundation-rails', '~> 6.2.3'
 gem 'autoprefixer-rails'
 
+gem 'nokogiri'
+gem 'premailer-rails'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 

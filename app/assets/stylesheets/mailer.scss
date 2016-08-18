@@ -27,6 +27,11 @@ h1 {
   padding: 15px 15px 10px;
 }
 
+strong {
+  color: $slate;
+  font-weight: bold;
+}
+
 a:link,
 a:visited {
   border-bottom: 1px dashed;
