@@ -1,3 +1,23 @@
 #portland {
   background-image: image-url('portland.jpg');
 }
+
+img.mbc {
+  border: 0;
+  height: auto;
+  width: 50px;
+}
+
+#breweries .medium-2.large-3 {
+  @include breakpoint(medium only) {
+    &:nth-child(3n+2) {
+      clear: left;
+    }
+  }
+
+  @include breakpoint(large) {
+    &:nth-child(4n+2) {
+      clear: left;
+    }
+  }
+}

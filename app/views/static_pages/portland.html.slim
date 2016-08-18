@@ -58,33 +58,108 @@ section#breweries
   .row
     .medium-10.large-8.medium-centered.columns
       h2 Breweries
-      / Allagash
-      / Shipyard/Seadog
-      / Geary’s
-      / Gritty’s
-      / Bissell Brothers
-      / Foundation
-      / Rising Tide
-      / Baxter
-      / Maine Beer Co
+      .row
+        .column.text-center
+          = link_to image_tag('mbc.png', class: 'mbc'), 'http://www.mainebeercompany.com/', target: '_blank' 
+          h6 = link_to 'Maine Beer Co', 'http://www.mainebeercompany.com/', target: '_blank'
+          p
+            = link_to 'https://www.google.com/maps/place/Maine+Beer+Company/@43.839144,-70.1235957,17z/data=!3m1!4b1!4m5!3m4!1s0x4cb29ae9279bfa53:0xbb7f045576e2df39!8m2!3d43.839144!4d-70.121407', target: '_blank' do
+              ' 525 US-1
+              br
+              ' Freeport, ME 04032
+        .medium-2.large-3.columns.text-center
+          h6 = link_to 'Allagash', '', target: '_blank'
+          p
+            = link_to 'https://www.google.com/maps/place/Allagash+Brewing+Company/@43.7031477,-70.3198819,17z/data=!3m1!4b1!4m5!3m4!1s0x4cb29ae8b81de229:0x995ef76d59afde45!8m2!3d43.7031479!4d-70.3176994', target: '_blank' do
+              ' 50 Industrial Way
+              br
+              ' Portland, ME 04103
+        .medium-2.large-3.columns.text-center
+          h6 = link_to 'Baxter', '', target: '_blank'
+          p
+            = link_to 'https://www.google.com/maps/place/Baxter+Brewing+Co./@44.0951384,-70.2212978,17z/data=!3m1!4b1!4m5!3m4!1s0x4cb26bdcbce30fd5:0x9dc876640bc3f6c7!8m2!3d44.0951384!4d-70.2191091', target: '_blank' do
+              ' 130 Mill St
+              br
+              ' Lewiston, ME 04240
+        .medium-2.large-3.columns.text-center
+          h6 = link_to 'Bissell Brothers', '', target: '_blank'
+          p
+            = link_to 'https://www.google.com/maps/place/Bissell+Brothers+Brewing+Company/@43.6514239,-70.2927477,17z/data=!3m1!4b1!4m5!3m4!1s0x4cb29ae8d69ae87b:0x3320e07eae2d3ece!8m2!3d43.6514239!4d-70.290559', target: '_blank' do
+              ' 4 Thompsons Point #108
+              br
+              ' Portland, ME 04102
+        .medium-2.large-3.columns.text-center
+          h6 = link_to 'Foundation', '', target: '_blank'
+          p
+            = link_to 'https://www.google.com/maps/place/Foundation+Brewing+Company/@43.7027994,-70.3221092,17z/data=!3m1!4b1!4m5!3m4!1s0x4cb29ae8d604323d:0xd84488e930c86bb3!8m2!3d43.7027994!4d-70.3199205', target: '_blank' do
+              ' 1 Industrial Way #5
+              br
+              ' Portland, ME 04103
+        .medium-2.large-3.columns.text-center
+          h6 = link_to 'Geary’s', '', target: '_blank'
+          p
+            = link_to 'https://www.google.com/maps/place/D.L.+Geary+Brewing+Co./@43.7079209,-70.316449,17z/data=!3m1!4b1!4m5!3m4!1s0x4cb29ac2ea7c5731:0x876cbb341400e244!8m2!3d43.7079209!4d-70.3142603', target: '_blank' do
+              ' 38 Evergreen Dr
+              br
+              ' Portland, ME 04103
+        .medium-2.large-3.columns.text-center
+          h6 = link_to 'Gritty’s', '', target: '_blank'
+          p
+            = link_to 'https://www.google.com/maps/place/Gritty\'s/@43.6562448,-70.255554,17z/data=!3m1!4b1!4m5!3m4!1s0x4cb29c3fc0cb4ecb:0x63ba791f0324b4f2!8m2!3d43.6562448!4d-70.2533653', target: '_blank' do
+              ' 396 Fore St
+              br
+              ' Portland, ME 04101
+        .medium-2.large-3.columns.text-center
+          h6 = link_to 'Rising Tide', '', target: '_blank'
+          p
+            = link_to 'https://www.google.com/maps/place/Rising+Tide+Brewing+Company,+LLC/@43.6654737,-70.2594473,17z/data=!3m1!4b1!4m5!3m4!1s0x4cb29ae92ba5f2af:0x95fb5f85a268f45e!8m2!3d43.6654737!4d-70.2572586', target: '_blank' do
+              ' 103 Fox St
+              br
+              ' Portland, ME 04101
+        .medium-2.large-3.columns.text-center
+          h6 = link_to 'Shipyard', '', target: '_blank'
+          p
+            = link_to 'https://www.google.com/maps/place/Shipyard+Brewing+Company/@43.661595,-70.2513687,17z/data=!3m1!4b1!4m5!3m4!1s0x4cb29c4223d64659:0x9e5aea47b177a7b8!8m2!3d43.661595!4d-70.24918', target: '_blank' do
+              ' 86 Newbury St
+              br
+              ' Portland, ME 04101
 
 section#hotels
   .row
     .medium-10.large-8.medium-centered.columns
       h2 Hotels
-      / Hyatt
-      / Residence Inn
-      / Courtyard Marriott
-      / Portland Harbor Inn
-      / Hilton Garden Inn at the Airport
-      / Regions? for Airbnb
+      p If you’re booking a hotel or AirBnB in the area, take a look at the
+        #{link_to 'map of downtown', 'http://www.portlandmaine.com/explore-downtown/downtown-map/', target: '_blank'}
+        mentioned above. Downtown Portland is just across the harbor from the location of the ceremony and reception,
+        and you wont’t find any closer hotels than that region.
+      p While this isn’t a comprehensive list of hotels, here are a few you might check out:
+      h6.text-center
+        = link_to 'Hyatt&nbsp;Place'.html_safe, 'http://www.portlandoldport.place.hyatt.com/en/hotel/home.html', target: '_blank'
+        ' •
+        = link_to 'Residence&nbsp;Inn'.html_safe, 'http://www.marriott.com/hotels/travel/pwmdt-residence-inn-portland-downtown-waterfront/', target: '_blank'
+        ' •
+        = link_to 'Courtyard&nbsp;Marriott'.html_safe, 'http://www.marriott.com/hotels/travel/pwmcd-courtyard-portland-downtown-waterfront/', target: '_blank'
+        ' •
+        = link_to 'Portland&nbsp;Harbor&nbsp;Hotel'.html_safe, 'http://www.portlandharborhotel.com/', target: '_blank'
+        ' •
+        = link_to 'Hilton&nbsp;Garden&nbsp;Inn&nbsp;at&nbsp;the&nbsp;Airport'.html_safe, 'http://hiltongardeninn3.hilton.com/en/hotels/maine/hilton-garden-inn-portland-airport-PWMPAGI/index.html', target: '_blank'
 
-section#restuarants
+section#restaurants
   .row
     .medium-10.large-8.medium-centered.columns
       h2 Restaurants
-      / Salt Water Grille - http://www.saltwatergrille.com/
-      / The Green Elephant - http://greenelephantmaine.com/
-      / Bayside American Cafe - http://www.baysideamericancafe.com/
-      / Outliers - http://outlierseatery.com/
-      / Amato's - http://amatos.com/
+      h6
+        = link_to 'Salt Water Grille', 'http://www.saltwatergrille.com/', target: '_blank'
+      p Waterfront dining near the venue, overlooking Portland Harbor
+      h6
+        = link_to 'The Green Elephant', 'http://greenelephantmaine.com/', target: '_blank'
+      p Delicious vegetarian/vegan food, worth checking out regardless of your restrictions
+      h6
+        = link_to 'Bayside American Cafe', 'http://www.baysideamericancafe.com/', target: '_blank'
+      p Formerly Bintliff’s. Tasty breakfast/brunch. Other meals too, supposedly.
+      h6
+        = link_to 'Outliers', 'http://outlierseatery.com/', target: '_blank'
+      p A great, relatively new restaurant overlooking the Casco Bay Bridge, near Jelena’s family.
+      h6
+        = link_to 'Amato’s', 'http://amatos.com/', target: '_blank'
+      p A Maine sandwich place that’s apparently extended beyond the state. Still a must-have when we visit Portland.
