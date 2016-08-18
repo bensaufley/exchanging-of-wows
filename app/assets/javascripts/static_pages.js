@@ -37,6 +37,8 @@
 
   $(function() {
     $('#rsvp, #song-requests').on({
+      'ajax:before': function() { console.log(this); $(this).add($(this).find(':button')).prop('disabled', true); },
+      'ajax:complete': function() { console.log(this); $(this).add($(this).find(':button')).prop('disabled', false); },
       'ajax:success': ajaxSuccess,
       'ajax:error': ajaxError
     }, 'form');
