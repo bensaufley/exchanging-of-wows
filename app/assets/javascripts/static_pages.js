@@ -36,12 +36,19 @@
   };
 
   $(function() {
+    $(window).on('load', function() {
+      $('[data-src]').each(function() {
+        var $this = $(this);
+        $this.one('load', function() { $this.removeClass('deferred'); });
+        this.src = $(this).data('src');
+      });
+    });
+
     $('#rsvp, #song-requests').on({
       'ajax:before': function() { console.log(this); $(this).add($(this).find(':button')).prop('disabled', true); },
       'ajax:complete': function() { console.log(this); $(this).add($(this).find(':button')).prop('disabled', false); },
       'ajax:success': ajaxSuccess,
       'ajax:error': ajaxError
     }, 'form');
-
   });
 }(jQuery));
