@@ -1,5 +1,6 @@
 (function($) {
   'use strict';
+  var searchRequest;
 
   var $form = $();
 
@@ -15,7 +16,8 @@
     $form.find('input.hide').val('')
       .filter('[name*=info]').val('{}'); 
     if (_this.value) {
-      $.ajax({
+      if (searchRequest) { searchRequest.abort(); }
+      searchRequest = $.ajax({
         url: '/song_requests/search',
         data: { search: this.value },
         success: function (data) {
