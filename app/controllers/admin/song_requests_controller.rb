@@ -19,6 +19,11 @@ class Admin::SongRequestsController < AdminController
 
     respond_to do |format|
       if @song_request.save
+        begin
+          NotificationMailer.new_song_request(@song_request).deliver
+        rescue => e
+          Rails.logger.error e
+        end
         format.html { redirect_to root_path, notice: 'Song Request was successfully submitted.' }
         format.json { render json: { status: :ok, notice: "Thank you for your request! We’ll see what we can do." }, status: :created }
       else

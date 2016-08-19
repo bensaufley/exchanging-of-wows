@@ -1,0 +1,15 @@
+h1 New Song Request
+- if @song_request.img(300)
+  img src=@song_request.img(300) width=75 style="width:75px;float:left;margin-right:10px;margin-bottom:10px;"
+p
+  strong Title:
+  '
+  = @song_request.name
+  br
+  strong Artist:
+  '
+  = @song_request.artist
+- if @song_request.spotify_url.present?
+  p = link_to 'Open in Spotify', @song_request.spotify_url 
+
+p = link_to "View All Song Requests (#{SongRequest.all.count})", song_requests_url 

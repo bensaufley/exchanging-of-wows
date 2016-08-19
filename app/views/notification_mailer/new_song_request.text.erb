@@ -1,0 +1,10 @@
+New Song Request
+Title: <%= @song_request.name %>
+Artist: <%= @song_request.artist %>
+
+<%- if @song_request.spotify_url.present? %>
+Open in Spotify: <%= @song_request.spotify_url %> 
+<%- end %>
+
+View All Song Requests (<%= SongRequest.all.count %>):
+<%= song_requests_url %> 

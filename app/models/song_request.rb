@@ -15,6 +15,10 @@ class SongRequest < ApplicationRecord
   end
 
   def img(max_width)
-    info[:album][:images].select { |img| img[:height] < max_width }&.first&.fetch(:url)
+    info.dig(:album, :images)&.select { |img| img[:height] < max_width }&.first&.fetch(:url)
+  end
+
+  def spotify_url
+    info.dig(:external_urls, :spotify)
   end
 end
