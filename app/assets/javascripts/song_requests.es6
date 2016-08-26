@@ -90,10 +90,15 @@
     $form.find('input[name=search]').val(data.name + ' by ' + data.artist)
   };
 
+  var invalidRequest = function(e) {
+    alert('Please select a song from the search results');
+  };
+
   $(function() {
     $form = $('#song-request-form');
     $form
       .on('click', '.search-results li', selectSong)
+      .on('click', ':invalid :submit', invalidRequest)
       .find('input[name=search]')
         .on('input', $.throttle(150, false, search))
         .on('blur', hideResults)
