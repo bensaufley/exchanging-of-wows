@@ -1,23 +1,29 @@
-h1.text-center Song Requests
+.row
+  .column
+    h1.text-center Song Requests
 
-table
-  thead
-    tr
-      th Song
-      th Requester
-      th
+    table
+      thead
+        tr
+          td
+          th Song
+          th Requester
+          th
 
-  tbody
-    - @song_requests.each do |song_request|
-      tr
-        td
-          img src = song_request.img(100)
-          strong = song_request.artist
-          '
-          = song_request.album
-          '
-          em = song_request.name
-        td
-          = song_request.requester&.names&.to_sentence || 'Unknown'
-          ' (#{song_request.ip})
-        td = link_to '&times;'.html_safe, song_request, data: { confirm: 'Are you sure?' }, method: :delete
+      tbody
+        - @song_requests.each do |song_request|
+          tr
+            td
+              = link_to_if song_request.spotify_url.present?, tag(:img, src: song_request.img(100)), song_request.spotify_url
+            td
+              em = link_to_if song_request.spotify_url.present?, song_request.name, song_request.spotify_url, target: :_blank
+              br
+              strong = song_request.artist
+              br
+              = song_request.album
+            td
+              = song_request.requester&.names&.to_sentence || 'Unknown'
+              '  (
+              small = link_to song_request.ip, 'http://ip-lookup.net/index.php?ip=' + song_request.ip, target: :_blank
+              ' )
+            td = link_to '&times;'.html_safe, song_request, data: { confirm: 'Are you sure?' }, method: :delete
