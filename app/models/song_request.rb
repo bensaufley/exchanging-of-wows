@@ -21,4 +21,8 @@ class SongRequest < ApplicationRecord
   def spotify_url
     info.dig(:external_urls, :spotify)
   end
+
+  def requester
+    Rsvp.find_by(ip: ip)
+  end
 end

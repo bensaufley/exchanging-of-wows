@@ -2,7 +2,7 @@
   = rsvp_form.label :first_name do
     ' Name(s)
     small.hint Comma&#8209;separated
-  = rsvp_form.text_field :names, placeholder: 'e.g. Harry Potter, Ginny Weasley'
+  = rsvp_form.text_field :names, value: rsvp[:names], placeholder: 'e.g. Harry Potter, Ginny Weasley'
   = rsvp_form.radio_button :attending, true
   = rsvp_form.label :attending, 'Attending', value: true
   = rsvp_form.radio_button :attending, false

@@ -6,7 +6,7 @@
   'use strict';
 
   var $callout = $('<div>', { 'class': 'callout', 'data-closable': '' }).append(
-      $('<button>', { 'class': 'close-button', type: 'button', 'data-close': '', html: '&times;' })
+    $('<button>', { 'class': 'close-button', type: 'button', 'data-close': '', html: '&times;' })
   );
 
   var showAlert = function(content, className, parent) {
