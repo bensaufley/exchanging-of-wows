@@ -14,7 +14,7 @@
     var _this = this,
         $this = $(this);
     $form.find('input.hide').val('')
-      .filter('[name*=info]').val('{}'); 
+      .filter('[name*=info]').val('{}');
     if (_this.value) {
       if (searchRequest) { searchRequest.abort(); }
       searchRequest = $.ajax({
