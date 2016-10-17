@@ -19,7 +19,7 @@
                 = name
                 br
               '
-              small = link_to rsvp.ip, 'http://ip-lookup.net/index.php?ip=' + rsvp.ip, target: :_blank
+              small = link_to rsvp.ip, 'https://db-ip.com/' + rsvp.ip, target: :_blank
             td = rsvp.notes
             td.text-right
               = link_to '📝', edit_rsvp_path(rsvp)

@@ -24,6 +24,6 @@
             td
               = song_request.requester&.names&.to_sentence || 'Unknown'
               '  (
-              small = link_to song_request.ip, 'http://ip-lookup.net/index.php?ip=' + song_request.ip, target: :_blank
+              small = link_to song_request.ip, 'https://db-ip.com/' + song_request.ip, target: :_blank
               ' )
             td = link_to '&times;'.html_safe, song_request, data: { confirm: 'Are you sure?' }, method: :delete
